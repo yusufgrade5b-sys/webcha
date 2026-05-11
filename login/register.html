@@ -2,13 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="author" content="Muhamad Nauval Azhar">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta name="description" content="Halaman Register Website Pribadi">
-	<title>Register - Website Pribadi</title>
+	<title>Register - Webcha</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
 	<section class="h-100">
 		<div class="container h-100">
@@ -25,25 +22,16 @@
 									<label class="mb-2 text-muted" for="username">Username</label>
 									<input id="username" type="text" class="form-control" name="username" required autofocus>
 								</div>
-
 								<div class="mb-3">
 									<label class="mb-2 text-muted" for="email">E-Mail Address</label>
 									<input id="email" type="email" class="form-control" name="email" required>
 								</div>
-
 								<div class="mb-3">
 									<label class="mb-2 text-muted" for="password">Password</label>
 									<input id="password" type="password" class="form-control" name="password" required>
 								</div>
-
-								<p class="form-text text-muted mb-3">
-									Dengan mendaftar, Anda menyetujui syarat dan ketentuan.
-								</p>
-
 								<div class="align-items-center d-flex">
-									<button type="submit" class="btn btn-primary ms-auto">
-										Register	
-									</button>
+									<button type="submit" class="btn btn-primary ms-auto">Register</button>
 								</div>
 							</form>
 						</div>
@@ -53,53 +41,11 @@
 							</div>
 						</div>
 					</div>
-					<div class="text-center mt-5 text-muted">
-						Copyright &copy; 2024 &mdash; Website Pribadi
-					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<script>
-    const registerForm = document.getElementById('registerForm');
-
-    registerForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // 1. Ambil data dari input
-        const userVal = document.getElementById('username').value;
-        const emailVal = document.getElementById('email').value;
-        const passVal = document.getElementById('password').value;
-
-        // 2. Bungkus data ke dalam objek yang bersih
-        const dataPendaftaran = {
-            username: userVal,
-            email: emailVal,
-            password: passVal
-        };
-
-        try {
-            const response = await fetch('https://herisusanta.my.id/javalogin/api/register.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(dataPendaftaran)
-            });
-
-            const data = await response.json();
-
-            if (data.status === 'success') {
-                alert('Registrasi Berhasil! Silakan Login.');
-                window.location.href = 'index.html';
-            } else {
-                // Menampilkan pesan gagal dari server
-                alert('Gagal: ' + data.message);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Koneksi terganggu. Pastikan internet aktif!');
-        }
-    });
-</script>
+	<script src="js/register.js"></script>
+</body>
+</html>
