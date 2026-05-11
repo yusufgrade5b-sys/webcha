@@ -21,12 +21,12 @@
                         <div class="card-body p-5">
                             <h1 class="fs-4 card-title fw-bold mb-4">Register</h1>
                             
-                            <!-- ✅ PERUBahan 1: Tambahkan id="registerForm" di tag form -->
+                            <!-- ✅ 1. TAMBAHKAN id="registerForm" -->
                             <form id="registerForm" method="POST" class="needs-validation" novalidate="" autocomplete="off">
                                 
                                 <div class="mb-3">
                                     <label class="mb-2 text-muted" for="username">Username</label>
-                                    <!-- ✅ PERUBAHAN 2: Ganti id="name" menjadi id="username" -->
+                                    <!-- ✅ 2. GANTI id="name" MENJADI id="username" -->
                                     <input id="username" type="text" class="form-control" name="username" value="" required autofocus>
                                     <div class="invalid-feedback">
                                         Username is required	
@@ -35,7 +35,6 @@
 
                                 <div class="mb-3">
                                     <label class="mb-2 text-muted" for="email">E-Mail Address</label>
-                                    <!-- id="email" sudah benar -->
                                     <input id="email" type="email" class="form-control" name="email" value="" required>
                                     <div class="invalid-feedback">
                                         Email is invalid
@@ -44,12 +43,14 @@
 
                                 <div class="mb-3">
                                     <label class="mb-2 text-muted" for="password">Password</label>
-                                    <!-- id="password" sudah benar -->
                                     <input id="password" type="password" class="form-control" name="password" required>
                                     <div class="invalid-feedback">
                                     	Password is required
                                 	</div>
                                 </div>
+
+                                <!-- ✅ 3. TAMBAHKAN ELEMEN INI (INI KUNCI UTAMANYA!) -->
+                                <div id="message" class="mb-3 text-danger fw-bold" style="display: block;"></div>
 
                                 <p class="form-text text-muted mb-3">
                                     By registering you agree with our terms and condition.
@@ -76,7 +77,7 @@
         </div>
     </section>
 
-<!-- Script JS dipanggil di sini -->
-<script src="js/register.js" defer></script>
+    <!-- ✅ 4. PASTIKAN SCRIPT INI ADA DI PALING BAWAH SEKALI SEBELUM </body> -->
+    <script src="js/register.js"></script>
 </body>
 </html>
