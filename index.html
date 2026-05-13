@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Matcha Shop eCommerce - Edukasi Matcha</title>
+    <title>Matcha Shop eCommerce HTML CSS Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,12 +17,12 @@
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 
     <style>
-        /* Trik biar Carousel gampang digeser walau ada video */
-        .video-container {
+        /* Container video agar full dan bisa diswipe */
+        .video-wrapper {
             position: relative;
-            overflow: hidden;
+            width: 100%;
         }
-        /* Lapisan transparan di atas video biar swipe/geser lancar */
+        /* Lapisan transparan agar carousel tetap bisa digeser pakai jempol */
         .video-overlay {
             position: absolute;
             top: 0;
@@ -41,30 +41,56 @@
             <div class="w-100 d-flex justify-content-between">
                 <div>
                     <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:yusuf.grade5b@gmail.com">yusuf.grade5b@gmail.com</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
                     <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:0822-2095-5766">0822-2095-5766</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
                 </div>
             </div>
         </div>
     </nav>
-
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">matCHA</a>
-            <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                matCHA
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
-                        <li class="nav-item"><a class="nav-link" href="shop.html">Toko</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Hubungi</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Tentang</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Toko</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Hubungi</a>
+                        </li>
+
+                        <p id="userInfo" class="nav-link mb-0">Belum login</p>
+                        <div id="authArea">
+                            <button onclick="goLogin()" class="nav-link btn btn-link">Login</button>
+                        </div>
                     </ul>
                 </div>
             </div>
+
         </div>
     </nav>
-
     <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
             <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
@@ -72,7 +98,6 @@
             <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            
             <div class="carousel-item active">
                 <div class="container">
                     <div class="row p-5">
@@ -82,7 +107,8 @@
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
                                 <h1 class="h1 text-success"><b>Matcha</b> Shop</h1>
-                                <p>Toko kuliner matcha simpel dan perfect.</p>
+                                <h3 class="h2">simpel dan perfect Shop yang menjual kuliner matcha</h3>
+                                <p>Matcha Shop adalah toko yang menjual aneka kuliner berbau matcha.</p>
                             </div>
                         </div>
                     </div>
@@ -98,7 +124,8 @@
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
                                 <h1 class="h1">Ruang Matcha</h1>
-                                <p>Eksplorasi rasa dan aroma matcha pilihan.</p>
+                                <h3 class="h2">memberikan ruang untuk bersatu dengan matcha</h3>
+                                <p>Tempat untuk mengeksplorasi cita rasa, aroma, dan keunikan dari setiap seduhan Matcha pilihan.</p>
                             </div>
                         </div>
                     </div>
@@ -107,25 +134,18 @@
 
             <div class="carousel-item">
                 <div class="container">
-                    <div class="row p-5">
-                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last video-container">
+                    <div class="row p-5 justify-content-center">
+                        <div class="col-12 video-wrapper">
                             <div class="video-overlay"></div>
                             <div class="ratio ratio-16x9 shadow rounded overflow-hidden">
-                                <iframe src="https://www.youtube.com/embed/JpuqZRTMNUg?autoplay=1&mute=1&loop=1&playlist=JpuqZRTMNUg&controls=0&disablekb=1" title="Matcha Video" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-0 d-flex align-items-center">
-                            <div class="text-align-left">
-                                <h1 class="h1">Edukasi Matcha</h1>
-                                <p>Lihat proses pembuatan matcha yang nikmat dan kaya manfaat.</p>
+                                <iframe id="matchaVideo" src="https://www.youtube.com/embed/JpuqZRTMNUg?autoplay=1&mute=1&loop=1&playlist=JpuqZRTMNUg&controls=0&modestbranding=1&rel=0&disablekb=1&enablejsapi=1" 
+                                    frameborder="0" allow="autoplay; encrypted-media"></iframe>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
         <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
             <i class="fas fa-chevron-left"></i>
         </a>
@@ -133,10 +153,62 @@
             <i class="fas fa-chevron-right"></i>
         </a>
     </div>
+    <section class="container py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Categories of The MATCHA</h1>
+                <p>kami memberikan beberapa category matcha yang dapat kalian pilih sebelum kalian memutuskan membeli</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="./assets/img/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">Minuman Matcha</h5>
+                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="./assets/img/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Makanan & Dessert Matcha</h2>
+                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="assets/img/categorymatcha_img_03.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Aksesoris Matcha</h2>
+                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Matcha Shop</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><i class="fas fa-map-marker-alt fa-fw"></i> SMA NEGERI 8 YOGYAKARTA</li>
+                        <li><i class="fa fa-phone fa-fw"></i> <a class="text-decoration-none" href="tel:0822-2095-5766">0822-2095-5766</a></li>
+                        <li><i class="fa fa-envelope fa-fw"></i> <a class="text-decoration-none" href="mailto:yusuf.grade5b@gmail.com">yusuf.grade5b@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
+
+    <script>
+        var myCarousel = document.getElementById('template-mo-zay-hero-carousel')
+        myCarousel.addEventListener('slid.bs.carousel', function () {
+            var activeItem = document.querySelector('.carousel-item.active');
+            var iframe = activeItem.querySelector('iframe');
+            if (iframe) {
+                var src = iframe.getAttribute('src');
+                iframe.setAttribute('src', src);
+            }
+        })
+    </script>
 </body>
 </html>
